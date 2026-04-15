@@ -1,26 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300..700&display=swap');
+
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --background: #FFF8F1;          /*Fondo principal de la web.*/
+  --foreground: #4A403A;           /*Fondo principal darkmode*/
+  
+  --primary-color: #E3B778;            /*Botones, enlaces, íconos destacados.*/
+  --secondary-color: #8B5E3C;          /*Títulos, subtítulos, bordes, pie de página.*/
+  --accent-color: #F4CBA3;             /*Etiquetas, hover de botones o fondos suaves.*/
+  --neutro-white-color: #FFFFFF;       /*Texto principal y fondos de contraste.*/
+  --color-black: #222;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-pacifico: "Pacifico", cursive;
+  --font-quicksand: "Quicksand", sans-serif;
+
+  
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #4A403A;
+    --foreground: #FFF8F1;
   }
+}
+
+html, body {
+  min-height: 100%;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-quicksand);
+  margin: 0;
 }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-pacifico);
+}
+
+h1 { font-size: 2.4rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.4rem; }
+h4 { font-size: 1.2rem; }

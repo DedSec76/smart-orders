@@ -1,65 +1,53 @@
-import Image from "next/image";
+import ProductGrid from "@/components/products/ProductGrid";
+import Hero from "@/components/sections/Hero";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    <main className="px-6">
+        <Hero />
+
+        <ProductGrid />
+
+        <article className="services">
+            <header>
+                <h2>Our Grandma's Ponche Services</h2>
+                <p>“We sweeten your moments with the taste of home.”</p>
+                <p>or</p>
+                <p>“Because every occasion deserves the gentle touch of Grandma's Ponche.”</p>
+            </header>
+
+            <div className="grid">
+                <div className="service">
+                        <h4>Direct sale of handcrafted goods</h4>
+                    <p>We make our ponche with fresh ingredients and homemade techniques, ready to enjoy at just the right level of foam and sweetness.
+                       (Ideal for: local delivery, online orders, or brick-and-mortar stores.)</p>
+                </div>
+                <div className="service">
+                    <h4>
+                        Personalized presentations</h4>
+                    <p>From individual jars to family bottles, we adapt the presentation for your gatherings, gifts, or special events.
+                       (It reinforces the product's artisanal and versatile value.)</p>
+                </div>
+                <div className="service">
+                    <h4>
+                        Ponche for events</h4>
+                    <p>We bring the taste of home to your celebrations. We offer service for birthdays, baptisms, weddings, and family reunions.
+                      (You can accompany it with photos of ponches served in decorative glasses or jars.)</p>
+                </div>
+            </div>
+            
+        </article>
+        
+        <section className="testimonial">
+            <h2>Testimonial</h2>
+
+            <div className="block">
+                <p>“The first time I tried Grandma's Ponche, I was curious, and from that moment on, I fell in love.❤️</p>
+                <p>It has such a smooth, frothy texture that it literally melts in your mouth. It's not cloying, it has just the right amount of sweetness and that creamy egg flavor that makes you feel like you're eating something homemade, made with love.</p>
+                <p>It reminded me of the desserts my grandmother used to make when I was a child. Since then, every time I want to treat myself, I choose this ponche. I highly recommend it—there's nothing like it, it's like a sweet hug after a long day.”</p>
+                <h4>Katharyna Fen</h4>
+            </div>
+        </section>
+    </main>
+  )
 }
