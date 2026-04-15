@@ -1,20 +1,15 @@
-import Anchor from "../ui/anchors/Anchor";
 import ProductCard from "./ProductCard";
 
-export default function ProductGrid() {
+export default async function ProductGrid({ products }: any) {
+    
     return (
-        <article>
-            <header>
-                <h2>Nuestros Postres Destacados</h2>
-                <p>Aprovecha la oportunidad por tiempo limitado...</p>
-            </header>
-
-            <div className="my-8">
-                <ProductCard />
-            </div>
-
-            <Anchor href="desserts.html" text="More Desserts" />
-        </article>
-            
+        <div className="grid gap-6 my-8 
+                        md:grid-cols-2 lg:grid-cols-3"
+        >
+                
+            {products.map((p:any) => (
+                  <ProductCard key={p.id} product={p} />   
+            ))}
+        </div>     
     )
 }

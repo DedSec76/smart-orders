@@ -1,3 +1,6 @@
+//const date = new Date()
+//console.log(date.getFullYear())
+
 export default function Footer() {
     return (
         <footer className="mx-6 my-6">

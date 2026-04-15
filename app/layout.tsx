@@ -13,7 +13,10 @@ export default function RootLayout({
       <body>
         <Header />
 
-        { children }
+        <main className="px-6
+                         max-w-[1300px] m-auto">
+          { children }
+        </main>
 
         <Footer />
       </body>

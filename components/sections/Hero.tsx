@@ -4,13 +4,12 @@ import Anchor from "../ui/anchors/Anchor";
 export default function Hero() {
     return (
         <section className="flex flex-row
-                            max-w-6xl mx-auto
                             md:items-center">
             <div className="text-center">
                 <h1>
                     Grandma's Cake
                 </h1>
-                <p className="my-4">Siente la suavidad del pastel de la abuela en cada tajada</p>
+                <p className="my-4 max-w-[350px]">Siente la suavidad del pastel de la abuela en cada tajada</p>
                 <Anchor text="Shop Now" />
             </div>
             

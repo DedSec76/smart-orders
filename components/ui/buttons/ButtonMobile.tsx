@@ -10,7 +10,8 @@ export default function ButtonMobile({ isOpen, setIsOpen }: Props ) {
         <button 
             onClick={() => setIsOpen(!isOpen)}
             className="absolute top-10 right-6 text-5xl cursor-pointer
-                        hover:text-black transition duration-300" 
+                        hover:text-black transition duration-300
+                        md:hidden" 
             
             aria-label="Open navegation Menu">
             <span 

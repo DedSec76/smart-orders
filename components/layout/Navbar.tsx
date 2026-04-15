@@ -11,10 +11,14 @@ type Props = {
 export default function Navbar({ isOpen, setIsOpen } : Props) {
  return (
     <nav onClick={() => setIsOpen(!isOpen)} 
-        className={isOpen ? "mt-4 flex flex-col items-center gap-7": "hidden"} >
+        className={`mt-4 flex-col items-center gap-7
+            ${isOpen ? "flex" : "hidden"} 
+            md:flex md:flex-row justify-between
+        `}
+    >
         <Link href="./" text="Home" />
         <Link href="./about" text="About Us" />
-        <Link href="./dessert" text="More Desserts" />
+        <Link href="./desserts" text="More Desserts" />
         <Link href="./order" text="Order Now"/>
     </nav>
  )

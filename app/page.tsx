@@ -1,12 +1,25 @@
 import ProductGrid from "@/components/products/ProductGrid";
 import Hero from "@/components/sections/Hero";
+import { getProducts } from "@/app/products/page";
+import { Product } from "@/features/products/types/product.types";
+import Anchor from "@/components/ui/anchors/Anchor";
 
-export default function Home() {
+export default async function Home() {
+    const products: Product[] = await getProducts()
+    const only3 = products.slice(0, 3)
+
   return (
-    <main className="px-6">
+    <>
         <Hero />
 
-        <ProductGrid />
+        <article>
+            <h2>Nuestros Pasteles Destacados</h2>
+            <p>Aprovecha esta oportunidad que es por tiempo limitado...</p>
+        
+            <ProductGrid products={only3} />
+
+            <Anchor href="/desserts" text="More Desserts" />
+        </article>
 
         <article className="services">
             <header>
@@ -48,6 +61,6 @@ export default function Home() {
                 <h4>Katharyna Fen</h4>
             </div>
         </section>
-    </main>
+    </>
   )
 }
