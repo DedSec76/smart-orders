@@ -1,12 +1,11 @@
 import ProductGrid from "@/components/products/ProductGrid";
-import { getProducts } from "@/app/products/page";
+import { getProducts } from "@/lib/products";
 import { Product } from "@/features/products/types/product.types";
 
 
 export default async function desserts() {
-    const products: Product[] = await getProducts()
-    const only3 = products.slice(0, 3)
-
+    const products = await getProducts()
+    
     return (
         <ProductGrid products={products}/>
     )

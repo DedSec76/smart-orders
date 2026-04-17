@@ -1,0 +1,52 @@
+CREATE TABLE public.products (
+  prod_id INT PRIMARY KEY,
+  prod_name VARCHAR(255),
+  slug VARCHAR(255) UNIQUE,
+  category VARCHAR(50),
+  price_pen DECIMAL(10,2),
+  stock INT,
+  rating DECIMAL(2,1),
+  reviews_count INT,
+  description TEXT,
+  image TEXT
+);
+
+
+// INSERTANDO DATOS
+
+INSERT INTO cakes 
+(prod_id, prod_name, slug, category, price_pen, stock, rating, reviews_count, description, image)
+VALUES
+(1, 'Torta de tres leches', 'torta-tres-leches', 'torta', 55.00, 35, 4.8, 21, 'Bizcochuelo suave bañado en tres leches con cobertura cremosa, ideal para celebraciones.', 'images/tortas/tortaTreslecheXl.webp'),
+
+(2, 'Torta selva negra', 'torta-selva-negra', 'torta', 45.50, 15, 4.8, 21, 'Clásica torta de chocolate con capas de crema y cerezas, de sabor intenso y balanceado.', 'images/tortas/tortaSelvanegra.webp'),
+
+(3, 'Torta de chocolate', 'torta-chocolate', 'torta', 50.00, 25, 4.8, 21, 'Bizcochuelo húmedo de chocolate con relleno de fudge y cobertura cremosa irresistible.', 'images/tortas/tortaChocolate.webp'),
+
+(4, 'Torta de vainilla', 'torta-vainilla', 'torta', 48.90, 35, 4.8, 21, 'Suave bizcochuelo de vainilla con relleno ligero y cobertura dulce, perfecto para toda ocasión.', 'images/tortas/tortaVainilla.webp'),
+
+(5, 'Torta red velvet', 'torta-red-velvet', 'torta', 52.00, 18, 4.8, 21, 'Torta de textura aterciopelada con ligero sabor a cacao y crema de queso suave.', 'images/tortas/tortaRedvelvet.webp'),
+
+(6, 'Torta de zanahoria', 'torta-zanahoria', 'torta', 40.00, 5, 4.8, 21, 'Bizcochuelo húmedo de zanahoria con especias y cobertura cremosa tipo cheese frosting.', 'images/tortas/tortaZanahoria.webp'),
+
+(7, 'Torta helada', 'torta-helada', 'torta', 45.00, 5, 4.8, 21, 'Refrescante torta de gelatina con capas cremosas y base suave, ideal para días calurosos.', 'images/tortas/tortaHelada.webp'),
+
+(8, 'Torta de lúcuma', 'torta-lucuma', 'torta', 51.20, 15, 4.8, 21, 'Deliciosa torta con sabor a lúcuma, fruta peruana de dulzor natural y textura cremosa.', 'images/tortas/tortaLucuma.webp'),
+
+(9, 'Torta de arándanos', 'torta-arandanos', 'torta', 56.00, 13, 4.8, 21, 'Torta suave con relleno de arándanos frescos y toque ligeramente ácido y dulce.', 'images/tortas/tortaArandanos.webp'),
+
+(10, 'Torta de piña volteada', 'torta-pina-volteada', 'torta', 40.00, 10, 4.8, 21, 'Bizcochuelo caramelizado con rodajas de piña, jugoso y lleno de sabor tropical.', 'images/tortas/tortaPinavolteada.webp'),
+
+(11, 'Torta de moka (café)', 'torta-moka-cafe', 'torta', 54.00, 6, 4.8, 21, 'Torta con intenso sabor a café combinada con chocolate y crema suave.', 'images/tortas/tortaMoka.webp'),
+
+(12, 'Cheesecake (tarta de queso)', 'cheesecake', 'postre', 40.00, 5, 4.8, 21, 'Postre cremoso con base de galleta y suave relleno de queso, dulce y ligeramente ácido.', 'images/postres/cheeseCake.webp'),
+
+(13, 'Pie de limón', 'pie-limon', 'postre', 35.00, 10, 4.8, 21, 'Base crocante con relleno ácido de limón y cobertura de merengue suave.', 'images/postres/pieLimon.webp'),
+
+(14, 'Pionono (arrollado dulce)', 'pionono', 'postre', 40.00, 20, 4.8, 21, 'Bizcochuelo enrollado relleno de manjar o crema, suave y delicioso.', 'images/postres/pionono.webp'),
+
+(15, 'Brownies', 'brownies', 'postre', 5.00, 25, 4.8, 21, 'Cuadrados de chocolate densos y húmedos con sabor intenso a cacao.', 'images/postres/brownies.webp'),
+
+(16, 'Alfajores', 'alfajores', 'postre', 2.00, 35, 4.8, 21, 'Galletas suaves rellenas de manjar blanco y espolvoreadas con azúcar en polvo.', 'images/postres/alfajores.webp');
+
+contraseñaDB: SmartOrder123#

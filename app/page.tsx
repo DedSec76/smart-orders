@@ -1,6 +1,6 @@
 import ProductGrid from "@/components/products/ProductGrid";
 import Hero from "@/components/sections/Hero";
-import { getProducts } from "@/app/products/page";
+import { getProducts } from "@/lib/products";
 import { Product } from "@/features/products/types/product.types";
 import Anchor from "@/components/ui/anchors/Anchor";
 
@@ -10,10 +10,11 @@ export default async function Home() {
 
   return (
     <>
-        <Hero />
+        <Hero src="/images/banners/hero.webp" />
 
         <article>
-            <h2>Nuestros Pasteles Destacados</h2>
+            <h2 className="text-4xl
+                           md:text-5xl">Nuestros Pasteles Destacados</h2>
             <p>Aprovecha esta oportunidad que es por tiempo limitado...</p>
         
             <ProductGrid products={only3} />
