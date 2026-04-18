@@ -11,6 +11,7 @@ import { CartItem } from "@/types/product";
 
 type Props =  {
     products: CartItem[];
+    isCartOpen: boolean
 }
 
 export default function Header() { 
@@ -18,7 +19,7 @@ export default function Header() {
     const [isCartOpen, setIsCartOpen] = useState(false)
 
     const [cart, setCart] = useState<CartItem[]>([])
-
+    console.log(cart)
     return (
         <header className="py-8 px-6 
                            md:flex flex-row justify-between items-center max-w-[1300px] m-auto">
@@ -33,12 +34,19 @@ export default function Header() {
             />
 
             <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
+
+            { isCartOpen && (
+                <CartModal 
+                    products={cart}
+                    onClose={() => setIsCartOpen(false)} 
+                />
+            )}
         </header>
     )
 
     function openCart() {
         const data = JSON.parse(localStorage.getItem("so-cart") || "[]")
         setCart(data)
-        setIsOpen(true)
+        setIsCartOpen(true)
     }
 }

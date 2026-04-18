@@ -4,10 +4,11 @@ type Props = {
     isFixed?: boolean;
     text?: string;
     urlImage?: string;
+    alt?: string;
     onClick?: () => void;
 }
 
-export default function ButtonSimple({onClick, isFixed=false, text, urlImage}: Props) {
+export default function ButtonSimple({onClick, isFixed=false, text, urlImage, alt}: Props) {
     return (
         <button onClick={onClick}
                 className={`${isFixed ? "fixed z-2000 top-22 right-6 xl:right-30" : ""}
@@ -19,7 +20,7 @@ export default function ButtonSimple({onClick, isFixed=false, text, urlImage}: P
                            rounded-4xl
                            cursor-pointer
                             hover:text-white hover:bg-[var(--secondary-color)]`}
-        >   {text} {urlImage ? <img src={urlImage} alt={`Imagen del boton ${text}`} /> : "" }
+        >   {text} {urlImage ? <img className="inline" src={urlImage} alt={`Imagen del boton ${alt}`} /> : "" }
         </button>
     )
 }
