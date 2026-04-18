@@ -16,8 +16,7 @@ export default function ButtonMobile({ isOpen, setIsOpen }: Props ) {
             aria-label="Open navegation Menu">
             <span 
                 className={`inline-block transition duration-300 ${ 
-                    isOpen ? "rotate-180 opacity-80" : ""
-                    }`}
+                    isOpen ? "rotate-180 opacity-80" : ""}`}
             >             
                 {isOpen ? "❌" : "☰"}
             </span>

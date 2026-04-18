@@ -1,12 +1,12 @@
 import ProductGrid from "@/components/products/ProductGrid";
 import Hero from "@/components/sections/Hero";
 import { getProducts } from "@/lib/products";
-import { Product } from "@/features/products/types/product.types";
+import { Product } from "@/types/product";
 import Anchor from "@/components/ui/anchors/Anchor";
 
 export default async function Home() {
-    const products: Product[] = await getProducts()
-    const only3 = products.slice(0, 3)
+    const products = await getProducts()
+    const only3: Product[] = products.slice(0, 3)
 
   return (
     <>
@@ -17,9 +17,13 @@ export default async function Home() {
                            md:text-5xl">Nuestros Pasteles Destacados</h2>
             <p>Aprovecha esta oportunidad que es por tiempo limitado...</p>
         
-            <ProductGrid products={only3} />
+            {only3.length === 0 ? (
+                <p>No hay productos disponibles</p>
+            ): (
+                <ProductGrid products={only3} />
+            )}
 
-            <Anchor href="/desserts" text="More Desserts" />
+            <Anchor href="/products" text="Ver más productos" />
         </article>
 
         <article className="services">

@@ -1,6 +1,10 @@
+import ProductGrid from "@/components/products/ProductGrid";
 import { getProducts } from "@/lib/products";
 
-export default async function ProductsPage() {
+export default async function desserts() {
     const products = await getProducts()
-    return products
+    
+    return (
+        <ProductGrid products={products}/>
+    )
 }

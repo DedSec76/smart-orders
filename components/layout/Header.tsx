@@ -5,9 +5,19 @@ import ButtonMobile from "../ui/buttons/ButtonMobile";
 import CupIcon from "../ui/icons/CupIcon";
 import Navbar from "./Navbar";
 import ButtonSimple from "../ui/buttons/ButtonSimple";
+import CartModal from "../orders/CartModal";
+import { CartItem } from "@/types/product";
+
+
+type Props =  {
+    products: CartItem[];
+}
 
 export default function Header() { 
     const [isOpen, setIsOpen] = useState(false)
+    const [isCartOpen, setIsCartOpen] = useState(false)
+
+    const [cart, setCart] = useState<CartItem[]>([])
 
     return (
         <header className="py-8 px-6 
@@ -16,9 +26,19 @@ export default function Header() {
 
             <ButtonMobile isOpen={isOpen} setIsOpen={setIsOpen} />
             
-            <ButtonSimple urlImage="/images/icons/cart32.png"/>
+            <ButtonSimple 
+                isFixed={true} 
+                urlImage="/images/icons/cart32.png"
+                onClick={openCart}
+            />
 
             <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
         </header>
     )
+
+    function openCart() {
+        const data = JSON.parse(localStorage.getItem("so-cart") || "[]")
+        setCart(data)
+        setIsOpen(true)
+    }
 }
